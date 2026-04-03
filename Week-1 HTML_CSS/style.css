@@ -1,68 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
-
-header {
-  background-color: #3f1a1f;
-  color: rgb(255, 247, 247);
-  text-align: center;
-  padding: 40px 20px;
+/* ── CSS VARIABLES — Sakura Blossom Palette ── */
+:root {
+  --sakura-deep:   #5c1a2e;
+  --sakura-dark:   #8b3a52;
+  --sakura-mid:    #d4748c;
+  --sakura-light:  #f2b8c6;
+  --sakura-pale:   #fce8ee;
+  --sakura-white:  #fffaf9;
+  --sakura-mist:   #7a9e87;
+  --sakura-text:   #2d1018;
 }
 
-.navbar{
-    display: flex;
-    gap: 20px;
-    padding: 15px 30px;
-    justify-content: center;
+/* ── BASE ── */
+body {
+  font-family: 'IBM Plex Serif', serif;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: var(--sakura-white);
+  color: var(--sakura-text);
+}
+
+/* ── HEADER ── */
+header {
+  background: linear-gradient(135deg, var(--sakura-deep), var(--sakura-dark));
+  color: var(--sakura-white);
+  text-align: center;
+  padding: 48px 20px 24px;
+  border-bottom: 4px solid var(--sakura-mid);
+}
+
+header h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--sakura-white);
+  margin-bottom: 8px;
+}
+
+/* ── NAVBAR ── */
+.navbar {
+  display: flex;
+  gap: 20px;
+  padding: 16px 30px;
+  justify-content: center;
 }
 
 .navbar a {
-  color: white;
+  color: var(--sakura-light);
   text-decoration: none;
-  font-size: 16px;
+  font-size: 15px;
+  letter-spacing: 1px;
   transition: color 0.3s ease;
 }
 
 .navbar a:hover {
-  color: #d47c00;
+  color: var(--sakura-mist);
 }
 
+/* ── SECTIONS ── */
 .section {
-  padding: 20px 20px;
+  padding: 40px 48px;
   max-width: 1100px;
   margin: 0 auto;
 }
 
-#section-1{
-    background-color: #f97070;
+#section-1 {
+  background-color: var(--sakura-pale);
+  border-left: 4px solid var(--sakura-mid);
 }
 
-#section-2{
-    background-color: #fe5e5e;
+#section-2 {
+  background-color: var(--sakura-light);
+  border-left: 4px solid var(--sakura-dark);
 }
 
-#section-3{
-    background-color: #f97070;
+#section-3 {
+  background-color: var(--sakura-pale);
+  border-left: 4px solid var(--sakura-mid);
 }
 
+/* ── HEADINGS ── */
 h2 {
-  color: #f3d1b5;
+  color: var(--sakura-deep);
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--sakura-light);
 }
 
-li{
-    padding-left: 10px;
-    margin-bottom: 10px;
+/* ── PARAGRAPH ── */
+p {
+  color: var(--sakura-text);
+  line-height: 1.8;
+  font-size: 1rem;
 }
 
+/* ── LISTS ── */
+li {
+  padding-left: 10px;
+  margin-bottom: 10px;
+  line-height: 1.7;
+  color: var(--sakura-text);
+}
+
+ol li::marker {
+  color: var(--sakura-dark);
+  font-weight: 600;
+}
+
+ul li::marker {
+  color: var(--sakura-mid);
+}
+
+/* ── FOOTER ── */
 footer {
-  background-color: #3f1a1f;
-  color: white;
+  background: linear-gradient(135deg, var(--sakura-deep), var(--sakura-dark));
+  color: var(--sakura-light);
   text-align: center;
-  padding: 20px;
+  padding: 24px 20px;
   font-size: 13px;
-}
-
-body {
-  font-family: 'IBM Plex Serif', serif; 
-  max-width: 900px;
-  margin: 0 auto;
+  letter-spacing: 1px;
+  border-top: 4px solid var(--sakura-mid);
+  margin-top: 0;
 }
