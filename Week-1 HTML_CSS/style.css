@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
 
-/* ── CSS VARIABLES — Sakura Blossom Palette ── */
 :root {
   --sakura-deep:   #5c1a2e;
   --sakura-dark:   #8b3a52;
@@ -10,117 +9,334 @@
   --sakura-white:  #fffaf9;
   --sakura-mist:   #7a9e87;
   --sakura-text:   #2d1018;
+  --shadow-soft:   0 4px 20px rgba(92, 26, 46, 0.12);
+  --shadow-hover:  0 12px 32px rgba(92, 26, 46, 0.2);
+  --radius:        12px;
 }
 
-/* ── BASE ── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'IBM Plex Serif', serif;
-  max-width: 900px;
-  margin: 0 auto;
   background-color: var(--sakura-white);
   color: var(--sakura-text);
+  line-height: 1.6;
 }
 
-/* ── HEADER ── */
 header {
   background: linear-gradient(135deg, var(--sakura-deep), var(--sakura-dark));
   color: var(--sakura-white);
   text-align: center;
-  padding: 48px 20px 24px;
+  padding: 56px 24px 32px;
   border-bottom: 4px solid var(--sakura-mid);
 }
 
 header h1 {
-  font-size: 2.8rem;
+  font-size: 3rem;
   font-weight: 700;
-  letter-spacing: 3px;
-  color: var(--sakura-white);
+  letter-spacing: 4px;
   margin-bottom: 8px;
 }
 
-/* ── NAVBAR ── */
+.tagline {
+  font-size: 1rem;
+  color: var(--sakura-light);
+  margin-bottom: 24px;
+  font-style: italic;
+}
+
 .navbar {
   display: flex;
-  gap: 20px;
-  padding: 16px 30px;
   justify-content: center;
+  gap: 32px;
+  padding: 16px 0 0;
 }
 
 .navbar a {
   color: var(--sakura-light);
   text-decoration: none;
-  font-size: 15px;
-  letter-spacing: 1px;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
   transition: color 0.3s ease;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.navbar a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--sakura-mist);
+  transition: width 0.3s ease;
 }
 
 .navbar a:hover {
   color: var(--sakura-mist);
 }
 
-/* ── SECTIONS ── */
+.navbar a:hover::after {
+  width: 100%;
+}
+
 .section {
-  padding: 40px 48px;
-  max-width: 1100px;
+  padding: 64px 48px;
+  max-width: 960px;
   margin: 0 auto;
 }
 
-#section-1 {
+.section-alt {
   background-color: var(--sakura-pale);
-  border-left: 4px solid var(--sakura-mid);
 }
 
-#section-2 {
-  background-color: var(--sakura-light);
-  border-left: 4px solid var(--sakura-dark);
-}
-
-#section-3 {
-  background-color: var(--sakura-pale);
-  border-left: 4px solid var(--sakura-mid);
-}
-
-/* ── HEADINGS ── */
-h2 {
+.section-title {
   color: var(--sakura-deep);
-  font-size: 1.5rem;
-  margin-bottom: 16px;
-  padding-bottom: 8px;
-  border-bottom: 2px solid var(--sakura-light);
+  font-size: 1.8rem;
+  margin-bottom: 32px;
+  text-align: center;
+  position: relative;
+  padding-bottom: 16px;
 }
 
-/* ── PARAGRAPH ── */
-p {
-  color: var(--sakura-text);
-  line-height: 1.8;
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--sakura-mid);
+  border-radius: 2px;
+}
+
+.about-grid {
+  display: flex;
+  gap: 48px;
+  align-items: center;
+}
+
+.avatar-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.avatar-placeholder {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--sakura-mid), var(--sakura-dark));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--sakura-white);
+  border: 4px solid var(--sakura-light);
+  margin-bottom: 12px;
+  box-shadow: var(--shadow-soft);
+}
+
+.avatar-name {
+  font-weight: 600;
+  color: var(--sakura-deep);
   font-size: 1rem;
 }
 
-/* ── LISTS ── */
-li {
-  padding-left: 10px;
-  margin-bottom: 10px;
-  line-height: 1.7;
-  color: var(--sakura-text);
-}
-
-ol li::marker {
+.avatar-role {
+  font-size: 0.85rem;
   color: var(--sakura-dark);
+  font-style: italic;
+}
+
+.about-text h2 {
+  color: var(--sakura-deep);
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--sakura-light);
+}
+
+.about-text p {
+  color: var(--sakura-text);
+  margin-bottom: 14px;
+  line-height: 1.8;
+}
+
+.about-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.badge {
+  background: var(--sakura-pale);
+  border: 1.5px solid var(--sakura-light);
+  color: var(--sakura-dark);
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+.goals-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.goal-card {
+  background: var(--sakura-white);
+  border: 1.5px solid var(--sakura-light);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: var(--shadow-soft);
+}
+
+.goal-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+}
+
+.goal-icon {
+  font-size: 2.5rem;
+  margin-bottom: 14px;
+}
+
+.goal-card h3 {
+  color: var(--sakura-deep);
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.goal-card p {
+  font-size: 0.88rem;
+  color: var(--sakura-dark);
+  line-height: 1.6;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 16px;
+}
+
+.skill-card {
+  background: var(--sakura-white);
+  border: 1.5px solid var(--sakura-light);
+  border-radius: var(--radius);
+  padding: 24px 16px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  box-shadow: var(--shadow-soft);
+  cursor: default;
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  background: var(--sakura-pale);
+  box-shadow: var(--shadow-hover);
+}
+
+.skill-icon {
+  font-size: 2rem;
+}
+
+.skill-name {
+  font-size: 0.9rem;
   font-weight: 600;
+  color: var(--sakura-deep);
+  letter-spacing: 1px;
 }
 
-ul li::marker {
-  color: var(--sakura-mid);
+.contact-box {
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
-/* ── FOOTER ── */
+.contact-box h2 {
+  color: var(--sakura-deep);
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+}
+
+.contact-box p {
+  color: var(--sakura-dark);
+  margin-bottom: 28px;
+  line-height: 1.7;
+}
+
+.contact-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 28px;
+  border-radius: 100px;
+  font-family: 'IBM Plex Serif', serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: inline-block;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+}
+
+.btn-primary {
+  background: var(--sakura-deep);
+  color: var(--sakura-white);
+  border: 2px solid var(--sakura-deep);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--sakura-deep);
+  border: 2px solid var(--sakura-deep);
+}
+
+.btn-outline:hover {
+  background: var(--sakura-pale);
+}
+
 footer {
   background: linear-gradient(135deg, var(--sakura-deep), var(--sakura-dark));
   color: var(--sakura-light);
   text-align: center;
-  padding: 24px 20px;
-  font-size: 13px;
-  letter-spacing: 1px;
+  padding: 32px 24px;
   border-top: 4px solid var(--sakura-mid);
-  margin-top: 0;
+}
+
+footer p {
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}
+
+.footer-sub {
+  font-size: 0.78rem;
+  color: var(--sakura-mid);
+  letter-spacing: 2px;
 }
