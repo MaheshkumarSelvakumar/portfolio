@@ -407,3 +407,115 @@ footer p {
   transform: translateY(-4px);
   box-shadow: var(--shadow-hover);
 }
+
+@media (max-width: 768px) {
+
+  header {
+    padding: 40px 20px 24px;
+  }
+
+  header h1 {
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+  }
+
+  .navbar {
+    gap: 20px;
+  }
+
+  .section {
+    padding: 48px 24px;
+  }
+
+  .about-grid {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-badges {
+    justify-content: center;
+  }
+
+  .goals-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .github-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  header {
+    padding: 32px 16px 20px;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+  }
+
+  .tagline {
+    font-size: 0.9rem;
+  }
+
+  .navbar {
+    gap: 12px;
+    flex-wrap: wrap;
+    padding: 12px 0 0;
+  }
+
+  .navbar a {
+    font-size: 12px;
+  }
+
+  .section {
+    padding: 40px 16px;
+  }
+
+  .about-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    text-align: center;
+  }
+
+  .avatar-placeholder {
+    width: 110px;
+    height: 110px;
+    font-size: 2.5rem;
+  }
+
+  .goals-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .github-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+  }
+
+  .github-box {
+    padding: 20px 16px;
+  }
+
+}
