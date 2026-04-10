@@ -519,3 +519,10 @@ footer p {
   }
 
 }
+
+.fa-html5 { color: #e34f26; }
+.fa-css3-alt { color: #1572b6; }
+.fa-js { color: #f7df1e; }
+.fa-react { color: #61dafb; }
+.fa-node-js { color: #339933; }
+.fa-database { color: var(--sakura-dark); }
