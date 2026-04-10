@@ -20,11 +20,16 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'IBM Plex Serif', serif;
   background-color: var(--sakura-white);
   color: var(--sakura-text);
   line-height: 1.6;
+  scroll-behavior: smooth;
 }
 
 header {
