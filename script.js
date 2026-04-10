@@ -1,14 +1,17 @@
 const hour = new Date().getHours();
 const greeting = document.getElementById("greeting");
 
-if (hour<12) {
+if (hour >= 20 || hour < 5) {
+    greeting.textContent = "Burning the midnight oil! Legends are built after dark. 🌙";
+} 
+else if (hour < 12) {
     greeting.textContent = "Good morning! Ready to code? ☀️";
 }
-else if (hour<=17) {
+else if (hour < 17) {
     greeting.textContent = "Good afternoon! Keep building! 🌸";
 }
-else if (hour>17) {
-    greeting.textContent = "Good evening! Night coding session? 🌙";
+else {
+    greeting.textContent = "Good evening! Wind down with some clean code. 🌆";
 }
 
 const skills = document.querySelectorAll(".skill-card");
